@@ -15,7 +15,7 @@ Each component is scored based on accessibility for typical home setups, conside
 
 ## Data Sources
 
-Overall all information are gathered from the official documentations of each blockchains. Storage data are collected from: https://chainstats.org.
+All information is gathered from the official documentation of each blockchain. Storage data is collected from: https://chainstats.org.
 
 ## Development
 
