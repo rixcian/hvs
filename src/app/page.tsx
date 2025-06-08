@@ -16,6 +16,7 @@ import {
 import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 import { ThemeButton } from "@/components/theme-button";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   const { table } = useDataTable({
@@ -33,14 +34,20 @@ export default function Home() {
         ),
         meta: {
           label: "Chain",
+          placeholder: "Search chain...",
+          variant: "text",
         },
         enableSorting: true,
         sortingFn: (rowA, rowB) => {
           return rowA.original.name.localeCompare(rowB.original.name);
         },
+        enableColumnFilter: true,
+        filterFn: (row, _, filterValue) => {
+          return row.original.name.toLowerCase().includes(filterValue.toLowerCase());
+        },
         cell: ({ row }) => (
           <div className="flex items-center gap-2">
-            <span className="text-muted-foreground">{row.index + 1}.&nbsp;</span>
+            <span className={"w-5 text-muted-foreground"}>{row.index + 1}.&nbsp;</span>
             <a
               href={row.original.hardwareRequirements.refLink}
               target="_blank"
@@ -52,12 +59,38 @@ export default function Home() {
                   alt={row.original.name}
                   className="w-6 h-6 rounded-full"
                 />
-                <span>{row.original.name}</span>
-                <ExternalLinkIcon className="w-3 h-3" />
+                <span className="whitespace-nowrap">{row.original.name}</span>
+                <ExternalLinkIcon className="w-3 h-3 hidden sm:block" />
               </div>
             </a>
           </div>
         ),
+      },
+      {
+        accessorKey: "layer",
+        header: ({ column }) => (
+          <DataTableColumnHeader column={column} title="Type" />
+        ),
+        meta: {
+          label: "Type",
+          variant: "multiSelect",
+          options: [
+            { label: "Layer 1", value: "1" },
+            { label: "Layer 2", value: "2" },
+          ],
+        },
+        enableColumnFilter: true,
+        filterFn: (row, _, filterValue) => {
+          return row.original.layer === parseInt(filterValue);
+        },
+        size: 50,
+        enableSorting: true,
+        sortingFn: (rowA, rowB) => {
+          return rowA.original.layer - rowB.original.layer;
+        },
+        cell: ({ row }) => {
+          return <Badge variant="secondary" className="whitespace-nowrap">{row.original.layer === 1 ? "Layer 1" : "Layer 2"}</Badge>;
+        },
       },
       {
         accessorKey: "hvs",
@@ -75,7 +108,7 @@ export default function Home() {
           return (
             <div className="flex gap-2 items-center">
               <span className="w-12">{row.original.hvs}</span>
-              <Progress value={row.original.hvs} max={100} />
+              <Progress value={row.original.hvs} max={100} className="hidden sm:block" />
             </div>
           );
         },
@@ -159,7 +192,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold mt-8">🏡 Home Verifiability Score</h1>
         <ThemeButton />
       </div>
-      <p className="text-lg text-gray-500">
+      <p className="text-lg text-muted-foreground mt-4">
         The Home Verifiability Score (HVS) is a metric that measures how easily
         and efficiently a blockchain network can be verified by consumer
         hardware at home. A higher score indicates better accessibility and
@@ -175,7 +208,7 @@ export default function Home() {
       <h4 className="text-xl mt-8 font-bold">
         How is the Home Verifiability Score calculated?
       </h4>
-      <p className="text-gray-500">
+      <p className="text-muted-foreground mt-2">
         The Home Verifiability Score (HVS) is calculated as a weighted average
         of hardware requirements: RAM (30%), CPU (30%), Storage (15%), and
         Bandwidth (25%). Each component is scored based on accessibility for
@@ -183,7 +216,7 @@ export default function Home() {
         costs.
       </p>
 
-      <p className="flex text-gray-500 mt-4">
+      <p className="flex text-muted-foreground mt-4">
         Found something incorrect? The code is open source and available on&nbsp;
         <a
           href="https://github.com/rixcian/home-verifiability-score"
@@ -203,15 +236,15 @@ export default function Home() {
           target="_blank"
           className="dark:text-white text-black underline"
         >
-          Dhai's work
+          Dhai's
         </Link>
-        &nbsp;and&nbsp;
+        &nbsp;work, re-implemented by&nbsp;
         <Link
           href="https://twitter.com/rixcian"
           target="_blank"
           className="dark:text-white text-black underline"
         >
-          made by rixcian
+          rixcian
         </Link>
       </div>
     </main>

@@ -13,6 +13,10 @@ This project provides a comparison tool for evaluating different blockchain netw
 
 Each component is scored based on accessibility for typical home setups, considering both hardware purchase costs and ongoing maintenance costs.
 
+## Data Sources
+
+Overall all information are gathered from the official documentations of each blockchains. Storage data are collected from: https://chainstats.org.
+
 ## Development
 
 Install dependencies:

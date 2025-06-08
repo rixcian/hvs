@@ -1,20 +1,6 @@
 import { calculateHVS, Chain } from "./chains";
 
 export const chainData: Chain[] = [
-  // TODO: No bandwidth requirements found for Fuel Ignition
-  // {
-  //   name: "Fuel Ignition",
-  //   iconURL:
-  //     "https://chainbroker.io/_next/image/?url=https%3A%2F%2Fstatic.chainbroker.io%2Fmediafiles%2Fprojects%2Ffuel-network%2Ffuuel.jpg&w=2560&q=75",
-  //   hardwareRequirements: {
-  //     cpuCores: 2,
-  //     RAM: 8,
-  //     storage: 500,
-  //     refLink:
-  //       "https://docs.fuel.network/guides/running-a-node/#hardware-requirements",
-  //   },
-  //   maxTheoreticalTPS: 8 * 21000,
-  // },
   {
     name: "Solana",
     iconURL: "/solana.jpg",
@@ -22,7 +8,7 @@ export const chainData: Chain[] = [
     hardwareRequirements: {
       cpuCores: 12,
       ram: 256,
-      storage: 2250,
+      storage: 4000,
       bandwidth: 15,
       refLink: "https://docs.solana.com/running-validator/validator-reqs",
     },
@@ -37,7 +23,7 @@ export const chainData: Chain[] = [
       ram: 64,
       storage: 3000,
       bandwidth: 15,
-      refLink: "https://aptos.dev/nodes/aptos-node-requirements",
+      refLink: "https://aptos.dev/en/network/nodes/validator-node/node-requirements#hardware-requirements",
     },
     maxTheoreticalTPS: 160000,
   },
@@ -46,11 +32,11 @@ export const chainData: Chain[] = [
     iconURL: "/sui.png",
     layer: 1,
     hardwareRequirements: {
-      cpuCores: 10,
-      ram: 32,
-      storage: 1000,
+      cpuCores: 8,
+      ram: 128,
+      storage: 4000,
       bandwidth: 3,
-      refLink: "https://docs.sui.io/guides/build/fullnode",
+      refLink: "https://docs.sui.io/guides/operator/sui-full-node#hardware-requirements",
     },
     maxTheoreticalTPS: 297000,
   },
@@ -63,7 +49,7 @@ export const chainData: Chain[] = [
       ram: 32,
       storage: 4000,
       bandwidth: 3,
-      refLink: "https://monad.xyz/docs/running-a-node",
+      refLink: "https://docs.monad.xyz/monad-arch/hardware-requirements",
     },
     maxTheoreticalTPS: 10000,
   },
@@ -74,7 +60,7 @@ export const chainData: Chain[] = [
     hardwareRequirements: {
       cpuCores: 16,
       ram: 64,
-      storage: 1000,
+      storage: 2000,
       bandwidth: 15,
       refLink: "https://docs.seinetwork.io/nodes/hardware-requirements",
     },
@@ -87,7 +73,7 @@ export const chainData: Chain[] = [
     hardwareRequirements: {
       cpuCores: 4,
       ram: 8,
-      storage: 500,
+      storage: 2000,
       bandwidth: 1.5,
       refLink: "https://docs.starknet.io/ecosystem/fullnodes-rpc-providers/#full_nodes",
     },
@@ -127,7 +113,7 @@ export const chainData: Chain[] = [
       ram: 16,
       storage: 2000,
       bandwidth: 2,
-      refLink: "https://docs.base.org/tutorials/run-a-base-node/",
+      refLink: "https://docs.base.org/chain/run-a-base-node#hardware-requirements",
     },
   },
   {
@@ -137,7 +123,7 @@ export const chainData: Chain[] = [
     hardwareRequirements: {
       cpuCores: 8,
       ram: 16,
-      storage: 1600,
+      storage: 2000,
       bandwidth: 2,
       refLink:
         "https://docs.optimism.io/builders/node-operators/tutorials/mainnet",
@@ -150,7 +136,7 @@ export const chainData: Chain[] = [
     hardwareRequirements: {
       cpuCores: 4,
       ram: 16,
-      storage: 2500,
+      storage: 5000,
       bandwidth: 3,
       refLink: "https://docs.arbitrum.io/run-arbitrum-node/run-full-node",
     },
@@ -165,7 +151,7 @@ export const chainData: Chain[] = [
       storage: 500,
       bandwidth: 2,
       refLink:
-        "https://github.com/matter-labs/zksync-era/blob/main/docs/src/guides/external-node/00_quick_start.md",
+        "https://github.com/matter-labs/zksync-era/blob/main/docs/src/guides/external-node/00_quick_start.md#system-requirements",
     },
   },
   {
@@ -173,11 +159,35 @@ export const chainData: Chain[] = [
     iconURL: "/gnosis.png",
     layer: 1,
     hardwareRequirements: {
-      cpuCores: 4,
+      cpuCores: 2,
       ram: 16,
       storage: 2000,
       bandwidth: 3,
       refLink: "https://docs.gnosischain.com/node#requirements",
+    },
+  },
+  {
+    name: "Monero",
+    iconURL: "/monero.svg",
+    layer: 1,
+    hardwareRequirements: {
+      cpuCores: 4,
+      ram: 4,
+      storage: 500,
+      bandwidth: 0.3,
+      refLink: "https://docs.getmonero.org/running-node/monerod-systemd/#assumptions",
+    },
+  },
+  {
+    name: "Polkadot",
+    iconURL: "/polkadot.png",
+    layer: 1,
+    hardwareRequirements: {
+      cpuCores: 6,
+      ram: 32,
+      storage: 2000,
+      bandwidth: 2,
+      refLink: "https://docs.polkadot.network/docs/en/maintain-guides-hardware-requirements",
     },
   },
 ];
