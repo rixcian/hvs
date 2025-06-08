@@ -1,6 +1,7 @@
 export type Chain = {
   name: string;
   iconURL: string;
+  layer: number;
   hardwareRequirements: HardwareRequirements;
   maxTheoreticalTPS?: number;
 };

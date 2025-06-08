@@ -1,5 +1,6 @@
 {
-  "name": "home-verifiability-score",
+  "name": "hvs",
+  "description": "Compare blockchain networks by how easily and efficiently they can be verified by consumer hardware at home.",
   "version": "0.1.0",
   "private": true,
   "author": {

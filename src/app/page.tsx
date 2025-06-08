@@ -20,6 +20,11 @@ import { ThemeButton } from "@/components/theme-button";
 export default function Home() {
   const { table } = useDataTable({
     data: getChainDataWithHVS(),
+    initialState: {
+      columnPinning: {
+        left: ["name"],
+      },
+    },
     columns: [
       {
         accessorKey: "name",
@@ -34,21 +39,24 @@ export default function Home() {
           return rowA.original.name.localeCompare(rowB.original.name);
         },
         cell: ({ row }) => (
-          <a
-            href={row.original.hardwareRequirements.refLink}
-            target="_blank"
-            className="hover:underline"
-          >
-            <div className="flex items-center gap-2">
-              <img
-                src={row.original.iconURL}
-                alt={row.original.name}
-                className="w-6 h-6 rounded-full"
-              />
-              <span>{row.original.name}</span>
-              <ExternalLinkIcon className="w-3 h-3" />
-            </div>
-          </a>
+          <div className="flex items-center gap-2">
+            <span className="text-muted-foreground">{row.index + 1}.&nbsp;</span>
+            <a
+              href={row.original.hardwareRequirements.refLink}
+              target="_blank"
+              className="hover:underline"
+            >
+              <div className="flex items-center gap-2">
+                <img
+                  src={row.original.iconURL}
+                  alt={row.original.name}
+                  className="w-6 h-6 rounded-full"
+                />
+                <span>{row.original.name}</span>
+                <ExternalLinkIcon className="w-3 h-3" />
+              </div>
+            </a>
+          </div>
         ),
       },
       {

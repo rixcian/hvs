@@ -18,6 +18,7 @@ export const chainData: Chain[] = [
   {
     name: "Solana",
     iconURL: "/solana.jpg",
+    layer: 1,
     hardwareRequirements: {
       cpuCores: 12,
       ram: 256,
@@ -30,6 +31,7 @@ export const chainData: Chain[] = [
   {
     name: "Aptos",
     iconURL: "/aptos.png",
+    layer: 1,
     hardwareRequirements: {
       cpuCores: 32,
       ram: 64,
@@ -42,6 +44,7 @@ export const chainData: Chain[] = [
   {
     name: "Sui",
     iconURL: "/sui.png",
+    layer: 1,
     hardwareRequirements: {
       cpuCores: 10,
       ram: 32,
@@ -54,6 +57,7 @@ export const chainData: Chain[] = [
   {
     name: "Monad",
     iconURL: "/monad.jpg",
+    layer: 1,
     hardwareRequirements: {
       cpuCores: 16,
       ram: 32,
@@ -66,6 +70,7 @@ export const chainData: Chain[] = [
   {
     name: "Sei",
     iconURL: "/sei.png",
+    layer: 1,
     hardwareRequirements: {
       cpuCores: 16,
       ram: 64,
@@ -78,18 +83,20 @@ export const chainData: Chain[] = [
   {
     name: "Starknet",
     iconURL: "/starknet.png",
+    layer: 2,
     hardwareRequirements: {
       cpuCores: 4,
       ram: 8,
       storage: 500,
       bandwidth: 1.5,
-      refLink: "https://docs.starknet.io/docs/FullNode.html",
+      refLink: "https://docs.starknet.io/ecosystem/fullnodes-rpc-providers/#full_nodes",
     },
     maxTheoreticalTPS: 857,
   },
   {
     name: "Ethereum",
     iconURL: "/ethereum.png",
+    layer: 1,
     hardwareRequirements: {
       cpuCores: 4,
       ram: 16,
@@ -102,6 +109,7 @@ export const chainData: Chain[] = [
   {
     name: "Bitcoin",
     iconURL: "/bitcoin.png",
+    layer: 1,
     hardwareRequirements: {
       cpuCores: 2,
       ram: 2,
@@ -113,6 +121,7 @@ export const chainData: Chain[] = [
   {
     name: "Base",
     iconURL: "/base.webp",
+    layer: 2,
     hardwareRequirements: {
       cpuCores: 8,
       ram: 16,
@@ -124,6 +133,7 @@ export const chainData: Chain[] = [
   {
     name: "Optimism",
     iconURL: "/optimism.png",
+    layer: 2,
     hardwareRequirements: {
       cpuCores: 8,
       ram: 16,
@@ -136,6 +146,7 @@ export const chainData: Chain[] = [
   {
     name: "Arbitrum One",
     iconURL: "/arbitrum.png",
+    layer: 2,
     hardwareRequirements: {
       cpuCores: 4,
       ram: 16,
@@ -147,10 +158,11 @@ export const chainData: Chain[] = [
   {
     name: "ZKSync Era",
     iconURL: "/zksync.webp",
+    layer: 2,
     hardwareRequirements: {
       cpuCores: 4,
-      ram: 16,
-      storage: 700,
+      ram: 32,
+      storage: 500,
       bandwidth: 2,
       refLink:
         "https://github.com/matter-labs/zksync-era/blob/main/docs/src/guides/external-node/00_quick_start.md",
@@ -159,6 +171,7 @@ export const chainData: Chain[] = [
   {
     name: "Gnosis",
     iconURL: "/gnosis.png",
+    layer: 1,
     hardwareRequirements: {
       cpuCores: 4,
       ram: 16,

@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Home Verifiability Score",
-  description: "Compare blockchain networks by how easily and efficiently they can be verified by consumer hardware at home",
+  description: "Compare blockchain networks by how easily and efficiently they can be verified by consumer hardware at home.",
   icons: "/favicon.ico",
 };
 
